@@ -3,10 +3,10 @@ app = Flask(__name__)
 import sqlite3
 # Retrieve data from database
 def getData():
-	conn=sqlite3.connect('interbrew.db ')
+	conn=sqlite3.connect('interbrew.db')
 	print("connecting to db")
 	curs=conn.cursor()
-	for row in curs.execute("SELECT * FROM  TEMP__data ORDER BY timestamp DESC LIMIT 1"):
+	for row in curs.execute("SELECT * FROM TEMP_data ORDER BY timestamp DESC LIMIT 1"):
 		time = str(row[0])
 		temp = row[1]
 	conn.close()
