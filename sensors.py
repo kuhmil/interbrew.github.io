@@ -7,7 +7,7 @@ import datetime
 import time
 import sqlite3
 #import Adafruit_DHT
-dbname='interbrew.db'
+dbname='/home/pi/interbrew.github.io/interbrew.db'
 sampleFreq = 2 # time in seconds
 # get data from DHT sensor
 
