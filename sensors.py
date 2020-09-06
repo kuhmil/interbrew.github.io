@@ -11,8 +11,8 @@ dbname='/home/pi/interbrew.github.io/interbrew.db'
 sampleFreq = 2 # time in seconds
 # get data from DHT sensor
 
-os.system('modprobe w1-gpio')
-os.system('modprobe w1-therm')
+os.system('sudo modprobe w1-gpio')
+os.system('sudo modprobe w1-therm')
 
 base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + '28*')[0]
@@ -64,7 +64,7 @@ def logData (temp):
     conn=sqlite3.connect(dbname)
     curs=conn.cursor()
     print("reading log")
-    curs.execute("INSERT INTO TEMP_data values(datetime('now'), (?))", (temp,))
+    curs.execute("INSERT INTO TEMP_data values(datetime('now','localtime'), (?))", (temp,))
     #sql = "INSERT INTO sensor_data(datetimes, temp) VALUES (%s, %s)"
     #val = (datetime('now'), temp) 
     #mycursor.execute(sql, val) 
@@ -85,13 +85,18 @@ def main():
         time.sleep(sampleFreq)
     displayData()
 
-try:
-    while True:
-        temp_c = read_temp()
-        logData(int(temp_c))
+temp_c = read_temp()
+logData(int(temp_c))
+main()
+print(f"{temp_c} writing temp data to database")
+
+#try:
+    #while True:
+        #temp_c = read_temp()
+        #logData(int(temp_c))
        # time.sleep(sampleFreq)
        # print("temperature")
-        main()
-        print(f"{temp_c} writing temp data to database")
-except KeyboardInterrupt:
-    GPIO.cleanup()
+        #main()
+        #print(f"{temp_c} writing temp data to database")
+#except KeyboardInterrupt:
+#    GPIO.cleanup()
