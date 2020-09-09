@@ -5,29 +5,33 @@
 </head>
 <body>
 
-<h1>DHT Sensor Data </h1>
-<h3> TEMPERATURE  :  {{ temp  }} oC</h3>	
-<h3> Last Sensors Reading: {{ time }} </h3>
-<!-- <a href="/"class="button">REFRESH</a></h3> -->
-<!-- <div>
-
-  <img src="../static/therm.jpg" alt="thermometer">
-   <div class="round-button">
-	<div class="round-button-circle">
-	<a href="http://example.com" class="round-button">REFRESH</a></div>
-  </div>
+<!-- <div id="background">
+	<h1>DHT Sensor  </h1>
+	<h3> TEMPERATURE  :  {{ temp  }} oC</h3>	
+	<h3> Last Sensors Reading: {{ time }} </h3>
 </div>
  -->
-<!--<div id="chart-container">FusionCharts will render here</div>
-  Radio Button Div -->
-<!--<div id="radio-container">
-  <b>Palette : </b>
-  <label><input type="radio" id="one" name="padding" value="1" CHECKED > 1 </label>
-#  <label><input type="radio" id="two" name="padding" value="2"> 2 </label>
-#  <label><input type="radio" id="three" name="padding" value="3"> 3 </label>
-#  <label><input type="radio" id="four" name="padding" value="4"> 4 </label>
-#  <label><input type="radio" id="five" name="padding" value="5"> 5 </label>
-#</div>-->
+
+
+<div class="black-font">DATABASE</div>
+<div class="black-reading">{{time}}</div>
+
+<div id="background">
+	<div class="white-font">INTERBREW</div> 
+	<div class="white-reading">READING</div>  
+	<div class="container">
+  		<button class="btn temp">
+  			<div class="name">{{temp}}C</div>
+  			<!-- <div class="name">ER</div> -->
+  			<!-- <div class="name">BREW</div> -->
+  		</button>
+  	</div>
+
+	<!-- <button class="btn default">Interbrew</button> -->
+	<!-- <div class="instructions">and<br/>hold to pour</div> -->
+	<!-- <button class="instructions">and<br/>hold to pour</button> -->
+  </div>
+</div>
 
 
 </body>
