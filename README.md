@@ -1,3 +1,6 @@
+{{ url_for('static', filename='stylesheets/style.css') }}
+ctrl+shift+r
+
 # interbrew.io
 IOT platform for brewing
 
