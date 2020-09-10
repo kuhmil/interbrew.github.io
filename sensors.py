@@ -64,10 +64,9 @@ def logData (temp):
     conn=sqlite3.connect(dbname)
     curs=conn.cursor()
     print("reading log")
-    curs.execute("INSERT INTO TEMP_data values(datetime('now','localtime'), (?))", (temp,))
-    #sql = "INSERT INTO sensor_data(datetimes, temp) VALUES (%s, %s)"
-    #val = (datetime('now'), temp) 
-    #mycursor.execute(sql, val) 
+    # curs.execute("INSERT INTO TEMP_data values(datetime('now','localtime'), (?))", (temp,))
+    curs.execute("INSERT INTO DATA values(date('now','localtime'),time('now','localtime'), (?))", (temp,))
+    # curs.execute("INSERT INTO TEMP_data(date,time,temp) VALUES ('2020-09-05','18:00:02','25')");
     conn.commit()
     conn.close()
 # display database data
