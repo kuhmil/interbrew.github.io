@@ -1,3 +1,41 @@
+# On Prem Temperature Tracker
+
+This project involves:
+* A Raspberry Pi
+* Raspberry Pi Touch Display
+* Temperature probe
+* 4.7k Resistor
+* Jumper Wires
+
+If you would like to make this cloud based project:
+[IOT-temperature-tracker](https://github.com/kuhmil/IOT-temperature-tracker)
+
+
+![alt text](images/pi)
+
+# Schematic (Needs to be updated, do not replicate)
+
+add pi schematic
+
+## Description
+
+Add ..
+
+## Authors
+
+Camille Owens
+
+
+## Sources
+* [brewpi](https://www.brewpi.com/)
+* [aws-documentation](https://docs.aws.amazon.com/iot/latest/developerguide/connecting-to-existing-device.html)
+
+
+
+
+
+
+
 {{ url_for('static', filename='stylesheets/style.css') }}
 ctrl+shift+r
 
